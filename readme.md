@@ -1,6 +1,6 @@
 # 🏎️ F1 Minimal API
 
-Uma API minimalista construída com **Node.js**, **TypeScript** e **Fastify**, que fornece informações atualizadas sobre **times** e **pilotos** da **Fórmula 1**.
+Uma API minimalista construída com **Node.js**, **TypeScript** e **Fastify**, que fornece informações sobre **times** e **pilotos** da **Fórmula 1**.
 
 ---
 
