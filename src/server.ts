@@ -50,9 +50,29 @@ server.get("/teams", async (request, response) => {
     return { teams };
 });
 
+interface TeamsParams {
+    id: string
+}
+
+server.get<{ Params: TeamsParams }>(
+    "/teams/:id",
+    async (request, response) => {
+        const id = parseInt(request.params.id);
+        const team = teams.find((d) => d.id === id);
+
+        if (!team) {
+            response.type("application/json").code(404);
+            return { message: "Team not found" };
+        } else {
+            response.type("application/json").code(200);
+            return { team };
+        }
+    }
+);
+
 server.get("/drivers", async (request, response) => {
     response.type("application/json").code(200);
-    return [{ id: 1, name: "Max Verstappen", team: "Red Bull" }];
+    return { drivers };
 })
 
 interface DriverParams {
